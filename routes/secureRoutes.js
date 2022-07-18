@@ -10,4 +10,9 @@ router
     .route('/dashboard')
     .get(secure.dashboardRender);
 
+router
+    .route('/dashboard/new-project')
+    .get(secure.newProjectRender)
+    .post(secure.newProjectPush);
+
 module.exports = router;

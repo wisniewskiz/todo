@@ -39,7 +39,7 @@ const ProjectSchema = new Schema({
         type: Boolean
     },
     dueBy: {
-        type: Number,
+        type: String,
         required: true
     }, 
     tasks: [TaskSchema]
@@ -60,4 +60,5 @@ const UserSchema = new Schema({
 UserSchema.plugin(passportLocalMongoose, {
     usernameField: 'email'
 });
+
 module.exports = mongoose.model('User', UserSchema);

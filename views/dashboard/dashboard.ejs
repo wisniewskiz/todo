@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <%= success %> 
-    <h1>You Made It <%= user.name %> </h1>
-</body>
+  </head>
+  <body>
+    <h1>You Made It <%= user.name %></h1>
+
+    <ul>
+      <% for(let project of projects) { %> 
+        <li><%= project.title %> </li>
+        <% } %>
+    </ul>
+
+    <div class="wrapper">
+      <h2>your projects</h2>
+      <a href="/dashboard/new-project"><button>New Project</button></a>
+    </div>
+  </body>
 </html>

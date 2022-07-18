@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <% if(success || error)  {%> 
+        <%= success %> 
+        <%= error %> 
+        <% } %> 
     <div class="wrapper">
         <form action="/login" method="POST">
             <div class="form__group">

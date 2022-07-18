@@ -7,6 +7,10 @@
     <title>REGISTER</title>
 </head>
 <body>
+    <% if(success || error)  {%> 
+        <%= success %> 
+        <%= error %> 
+        <% } %> 
     <div class="wrapper">
         <form action="/register" method="POST">
             <div class="form__group">
