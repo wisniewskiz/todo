@@ -33,9 +33,9 @@ That is the idea behind this to-do app.
 
 ---
 ### To-Do
-- [] Set up server
-- [] Set up database
-- [] Create schemas for data
+- [x] Set up server
+- [x] Set up database
+- [x] Create schemas for data
 - [] Create rest api for crud operations
 - [] Develop logic for daily list creation and productivity data tracking
 - [] Create branding and style guides
