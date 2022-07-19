@@ -19,6 +19,12 @@ router
 router
     .route('/dashboard/:id')
     .get(secure.projectRender)
-    .post(secure.newTaskPush);
+    .post(secure.newTaskPush)
+    .put(secure.editProjectPush)
+    .delete(secure.destoryProject);
+
+router  
+    .route('/dashboard/:id/edit')
+    .get(secure.editProjectRender);
 
 module.exports = router;

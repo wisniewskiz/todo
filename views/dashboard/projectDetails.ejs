@@ -26,6 +26,11 @@
     <div>
       <a href="/dashboard/<%= project._id %>/edit"><button>Edit Project</button></a>
     </div>
+    <div>
+      <form action="/dashboard/<%= project._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Project</button>
+      </form>
+    </div>
     <a href="/dashboard">back home</a>
   </body>
 </html>
