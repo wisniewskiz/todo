@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Edit this project, <%= user.name %>?</h3>
+
+    <div class="wrapper">
+      <form action="/dashboard/<%= project._id %>/?_method=PUT" method="POST">
+        <div class="form__group">
+          <label for="prjectTitle">Project title</label>
+          <input type="text" id="projectTitle" name="project[title]" value="<%= project.title %> " required />
+        </div>
+        <div class="form__group">
+          <label for="projectDescription">Project description</label>
+          <input
+            type="text"
+            id="projectDescription"
+            name="project[description]"
+            value="<%= project.description %> "
+            required
+          />
+        </div>
+        
+        <div class="form__group">
+          <label for="projectDueBy">Project Deadline</label>
+          <input
+            type="date"
+            id="projectDueBy"
+            name="project[dueBy]"
+            value="2022-07-30"
+            required
+          />
+        </div>
+        <div class="form__group">
+          <button type="submit">Edit Project</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

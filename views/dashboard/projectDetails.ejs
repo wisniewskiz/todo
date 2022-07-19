@@ -8,6 +8,7 @@
   </head>
   <body>
     <h1><%= project.title %> </h1>
+    <h2><%= project.description %> </h2>
     <div>
       <h2>tasks</h2>
       <ol>
@@ -21,6 +22,9 @@
         <input type="text" id="task" name="task[title]">
         <button type="submit">Add Task</button>
       </form>
+    </div>
+    <div>
+      <a href="/dashboard/<%= project._id %>/edit"><button>Edit Project</button></a>
     </div>
     <a href="/dashboard">back home</a>
   </body>
