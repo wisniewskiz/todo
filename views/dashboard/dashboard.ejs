@@ -7,17 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>You Made It <%= user.name %></h1>
-
-    <ul>
-      <% for(let project of projects) { %> 
-        <li><%= project.title %> </li>
-        <% } %>
-    </ul>
-
+    <h1>You Made It, <%= currentUser.name %> </h1>
     <div class="wrapper">
-      <h2>your projects</h2>
-      <a href="/dashboard/new-project"><button>New Project</button></a>
+      <h3>Your Current Projects</h3>
+      <ul>
+        <% if(!currentUser.projects) { %> 
+          <p>Let's add some projects to get started</p>
+          <% } for( let project of currentUser.projects) {%> 
+            <li><%= project._id %> </li>
+            <% } %> 
+      </ul>
+      <a href="/dashboard/new-project">Add a New Project</a>
     </div>
   </body>
 </html>

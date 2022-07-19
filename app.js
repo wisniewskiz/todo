@@ -52,8 +52,8 @@ const secureRoutes = require("./routes/secureRoutes");
 const User = require('./models/User');
 
 //MIDDLEWARES
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session(sessionConfig));
 app.use(flash());

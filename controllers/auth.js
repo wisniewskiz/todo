@@ -30,6 +30,6 @@ module.exports.loginUser = (req, res) => {
         req.flash("success", "Welcome back");
         res.redirect("/dashboard/");
     } catch(e) {
-        console.log(e);
+        console.log(e.message);
     }
   };
