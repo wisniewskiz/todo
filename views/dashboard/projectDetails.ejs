@@ -7,6 +7,21 @@
     <title>Document</title>
   </head>
   <body>
-    <%= project %> 
+    <h1><%= project.title %> </h1>
+    <div>
+      <h2>tasks</h2>
+      <ol>
+      <% for (let task of project.tasks) {%> 
+      <li><%= task.title %> </li>
+      <% } %> 
+    </div>
+    <div class="task__form">
+      <form action="/dashboard/<%= project._id %> " method="POST">
+        <label for="task">Task</label>
+        <input type="text" id="task" name="task[title]">
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+    <a href="/dashboard">back home</a>
   </body>
 </html>

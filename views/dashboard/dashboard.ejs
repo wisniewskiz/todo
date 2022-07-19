@@ -14,7 +14,7 @@
         <% if(!currentUser.projects) { %> 
           <p>Let's add some projects to get started</p>
           <% } for( let project of currentUser.projects) {%> 
-            <li><%= project._id %> </li>
+            <a href="/dashboard/<%= project._id %> "><li><%= project.title %> </li></a>
             <% } %> 
       </ul>
       <a href="/dashboard/new-project">Add a New Project</a>

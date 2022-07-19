@@ -22,10 +22,10 @@ const ProjectSchema = new Schema({
         type: String,
         required: true
     }, 
-    tasks: {
+    tasks: [{
         type: Schema.Types.ObjectId,
         ref: "Task"
-    },
+    }],
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User"

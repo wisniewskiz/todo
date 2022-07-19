@@ -6,9 +6,6 @@ const TaskSchema = new Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String
-    },
     inProgress: {
         type: Boolean
     },
@@ -21,7 +18,11 @@ const TaskSchema = new Schema({
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
+    },
+    project: {
+        type: Schema.Types.ObjectId,
+        ref: "Project"
     }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Task', TaskSchema);
