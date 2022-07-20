@@ -27,4 +27,8 @@ router
     .route('/dashboard/:id/edit')
     .get(secure.editProjectRender);
 
+router 
+    .route('/dashboard/:projectid/:taskid')
+    .delete(secure.destroyTask);
+
 module.exports = router;

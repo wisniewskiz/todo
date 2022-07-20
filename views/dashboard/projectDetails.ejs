@@ -14,6 +14,9 @@
       <ol>
       <% for (let task of project.tasks) {%> 
       <li><%= task.title %> </li>
+      <form action="/dashboard/<%= project._id %>/<%= task._id %>?_method=DELETE" method="POST">
+      <button type="submit">X</button>
+      </form>
       <% } %> 
     </div>
     <div class="task__form">

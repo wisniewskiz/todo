@@ -121,9 +121,31 @@ module.exports.destoryProject = async (req, res) => {
         return;
     }
     try {
-        await Project.findByIdAndDelete(req.params.id);
+        const projectId = req.params.id
+        await User.findByIdAndUpdate(req.user._id, {$pull: {projects: projectId}});
+        //GET HELP WITH THIS LINE OF CODE!!!!!! REMOVE NOT USED TASKS
+        await Project.findByIdAndUpdate(projectId, {$pullAll : {project: projectId }});
+        await Project.findByIdAndDelete(projectId);
         req.flash("success", "Project Deleted");
         res.redirect('/dashboard');
+    } catch (e) {
+        console.log(e.message);
+    }
+};
+
+module.exports.destroyTask = async (req, res) => {
+    if (!req.isAuthenticated()) {
+        req.flash("error", "you mush be signed in");
+        res.redirect("/login");
+        return;
+    }
+    try {
+        const { projectid, taskid } = req.params;
+        await Project.findByIdAndUpdate(projectid, {$pull: {tasks: taskid}});
+        await Task.findByIdAndDelete(taskid);
+        req.flash("success", "Task Deleted");
+        console.log(projectid);
+        res.redirect(`/dashboard/${projectid}`)
     } catch (e) {
         console.log(e.message);
     }
